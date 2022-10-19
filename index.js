@@ -22,5 +22,5 @@ app.get("/end2", (req,res,next) => {
     })
 })
 
-const PORT = process.nextTick.PORT || 5001;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => console.log("server started in port " + PORT))
