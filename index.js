@@ -1,26 +1,40 @@
 const dotenv = require("dotenv")
+var bodyParser = require('body-parser')
+
 dotenv.config()
 
 const express = require("express")
+const nodemailer = require("nodemailer")
 
 const app = express()
 
-app.get("/end1", (req,res,next) => {
-    res.status(200).json({
-        success: true,
-        data: {
-            message: "hello world!"
-        }
-    })
-})
-app.get("/end2", (req,res,next) => {
-    res.status(200).json({
-        success: true,
-        data: {
-            message: "hello world from endpoint 2!"
-        }
-    })
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
+app.get("/", (req, res) => {
+    res.sendFile("./home.html", { root: __dirname })
 })
 
-const PORT = process.env.PORT || 5001;
-app.listen(PORT, () => console.log("server started in port " + PORT))
+app.get("/encontrar", (req,res) => {
+    res.sendFile("./encontrar.html", {root: __dirname})
+})
+
+const FSDB = require("file-system-db");
+const db = new FSDB("./db.json", false); 
+
+app.post("/register", (req, res) => {
+    let nombre = req.body.nombre
+    let dni = req.body.dni
+    let mail = req.body.mail
+    let mpmail = req.body.mpmail
+    db.set(req.body.dni, {"nombre": nombre, "mail" : mail, "mpmail": mpmail})
+
+    res.sendFile("./gracias.html",{ root: __dirname})
+})
+
+app.post("/encontrar", (req,res) => {
+    if(db.has(req.body.dni)) res.send("se encontro con nombre: " + db.get(req.body.dni + ".nombre"))
+    else req.send("no se encontro")
+})
+
+app.listen(80, () => console.log("server started in port " + PORT))
