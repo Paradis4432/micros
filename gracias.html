@@ -1,2 +1,28 @@
-<h1>gracias por registrarse</h1>
-<h1>cvu: 0000</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gracias</title>
+</head>
+<body>
+    
+    <h1>Gracias por suscribirte</h1>
+    <h1>Numero de CVU: 0000003100047731443674</h1>
+    <h1>Monto a transferir: 1.500</h1>
+    <button onclick="copiar()">Copiar</button>
+</body>
+</html>
+
+<script>
+    function copiar(){
+        navigator.clipboard.writeText("0000003100047731443674").then(() => {alert("Se copio el CVU")})
+    }
+</script>
+
+<style>
+    body{
+        background-color: rgb(237, 237, 237);
+    }
+</style>
