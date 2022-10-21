@@ -37,4 +37,4 @@ app.post("/encontrar", (req,res) => {
     else req.send("no se encontro")
 })
 
-app.listen(80, () => console.log("server started in port " + PORT))
+app.listen(80, () => console.log("server started in port 80"))
