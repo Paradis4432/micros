@@ -1,11 +1,27 @@
 {
-    "43874286": {
-        "nombre": "lucas",
-        "mail": "lucasezequiel120202@gmail.com",
-        "mpmail": "lucasezeuqiel1222@gmail,com"
+    "payments": {
+        "lucasezequiel120202@gmail=com": 3500,
+        "palomacastro2003@gmail=com": 2,
+        "ivanweitl9@gmail=com": 2,
+        "giselaguillin@gmail=com": 1,
+        "zetaaguilera56@gmail=com": 460,
+        "santischneider1@gmail=com": 3200
     },
-    "player": {
-        "name": "WillTDA",
-        "level": 15
+    "registros": {
+        "lucasezequiel120202@gmail=com": {
+            "nombre": "lucas ez rodriguez",
+            "dni": "43874286",
+            "tel": "58329344"
+        },
+        "testuser@yahoo=com=ar": {
+            "nombre": "testuser0",
+            "dni": "0011",
+            "tel": "00222"
+        },
+        "mail=com": {
+            "nombre": "ivan",
+            "dni": "123456",
+            "tel": "987654"
+        }
     }
 }
